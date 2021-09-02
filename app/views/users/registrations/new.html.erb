@@ -4,6 +4,21 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :ユーザーのタイプ %><br />
+    <%= f.select :type, User.types.keys, {"---" => 0, "生徒" => 1, "先生" => 2}%>
+  </div>
+
+  <div class="field">
+    <%= f.label :ニックネーム %><br />
+    <%= f.text_field :nickname, class:"input-default",id:"nickname", placeholder:"例) テスト太郎", maxlength:"40" %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :学校名 %><br />
+    <%= f.text_field :school_name, class:"input-default",id:"school_name", placeholder:"例) 〇〇大学", maxlength:"40" %><br />
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
