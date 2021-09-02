@@ -1,0 +1,48 @@
+<main class="container">
+  <div class="row mt-3">
+    <div class="col-md-10 col-sm-12 mx-auto">
+      <%= link_to "", lessons_path, class:"fas fa-angle-left text-dark mb-3" %><!-- 戻るボタン -->
+      <h3 class="mb-4"><%= @lesson.name %></h3>
+      <% @tasks.each do |task| %>
+        <div class="card mx-auto mb-5 shadow p-3">
+          <%= link_to task_path(task.id), class:"card-body text-dark text-decoration-none" do %>
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title"><%= task.title %></h5>
+              <p class="text-info">>></p>
+            </div>
+            <div class="card-head d-flex">
+              <p class="card-text">永田教授</p>
+              <p class="card-text ml-4">期限：<span class="text-danger"><%= l task.deadline_at %></span></p>
+            </div>
+            
+            <div class="discription">
+              <p class="card-text"><%= task.detail %></p>
+            </div>
+          <% end %>
+          <div class="riaction ml-3 d-flex">
+            <div class="btn-toolbar" role="toolbar">
+              <div class="btn-group mr-2" role="group">
+                <button type="button" class="btn btn-outline-danger">
+                  <h6>ヤバイ</h6><br>
+                  <i class="far fa-tired"></i>
+                </button>
+              </div>
+              <div class="btn-group mr-2" role="group">
+                <button type="button" class="btn btn-outline-warning">
+                  <h6>やってる</h6><br>
+                  <i class="far fa-grin-alt"></i>
+                </button>
+              </div>
+              <div class="btn-group mr-2" role="group">
+                <button type="button" class="btn btn-outline-success">
+                  <h6>終わった!</h6><br>
+                  <i class="far fa-laugh-beam"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

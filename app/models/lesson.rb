@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+  has_many :tasks, dependent: :delete_all
   with_options presence: true do
     validates :name
     validates :weekday

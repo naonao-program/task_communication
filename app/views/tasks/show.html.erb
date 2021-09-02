@@ -1,0 +1,66 @@
+<main class="container">
+  <div class="row mt-3">
+    <div class="col-md-10 col-sm-12 mx-auto">
+      <%= link_to "", lesson_tasks_path(@task.lesson), class:"fas fa-angle-left text-dark mb-3" %>
+      <h3 class="mb-3"><%= @task.lesson.name %></h3>
+      <div class="card mx-auto shadow p-3 mb-2">
+        <div class="card-body">
+          <div class="card-head d-flex">
+            <h5 class="card-title"><%= @task.title %></h5>
+            <p class="card-text ml-4">期限：<span class="text-danger"><%= l @task.deadline_at %></span></p>
+          </div>
+          <p class="card-text">永田教授</p>
+          <div class="discription">
+            <p class="card-text"><%= @task.detail %></p>
+          </div>
+        </div>
+      </div>
+      <div class="card mx-auto shadow p-3">
+        <div class="card-body">
+          <h5 class="card-title mb-4">みんなの進捗</h5>
+          <div class="mx-auto">
+            <div class="rounded-pill bg-danger mb-3 text-light" style="width: 60%;">60 ヤバイ</div>
+            <div class="rounded-pill bg-warning mb-3 text-light" style="width: 33%;">30 やってる</div>
+            <div class="rounded-pill bg-success text-light" style="width: 40%;">40 おわった！</div>
+          </div>
+        </div>
+      </div>
+      <div class="card mx-auto shadow p-3 mt-2 mb-3">
+        <div class="chat bg-light p-4">
+          <div class="message d-flex flex-row align-items-start mb-4">
+            <div class="message-icon rounded-circle bg-secondary text-white fs-3 mr-2">
+              <i class="fas fa-user m-2"></i>
+            </div><!-- .message-icon -->
+            <p class="message-text p-2 ms-2 mb-0 bg-warning">
+              サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
+            </p><!-- .message-text -->
+          </div><!-- .message -->
+          <div class="message d-flex flex-row-reverse align-items-start mb-4">
+            <div class="message-icon rounded-circle bg-secondary text-white fs-3 ml-2">
+              <i class="fas fa-user m-2"></i>
+            </div><!-- .message-icon -->
+            <p class="message-text p-2 me-2 mb-0 bg-info">
+              サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
+            </p><!-- .message-text -->
+          </div><!-- .message -->
+          <div class="message d-flex flex-row align-items-start mb-4">
+            <div class="message-icon rounded-circle bg-secondary text-white fs-3 mr-2">
+              <i class="fas fa-user m-2"></i>
+            </div><!-- .message-icon -->
+            <p class="message-text p-2 ms-2 mb-0 bg-warning">
+              サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
+            </p><!-- .message-text -->
+          </div><!-- .message -->
+          <div class="message d-flex flex-row-reverse align-items-start mb-4">
+            <div class="message-icon rounded-circle bg-secondary text-white fs-3 ml-2">
+              <i class="fas fa-user m-2"></i>
+            </div><!-- .message-icon -->
+            <p class="message-text p-2 me-2 mb-0 bg-info">
+              サンプルテキスト。サンプルテキスト。サンプルテキスト。
+            </p><!-- .message-text -->
+          </div><!-- .message -->
+        </div><!-- .chat -->
+      </div>
+    </div>
+  </div>
+</main>
