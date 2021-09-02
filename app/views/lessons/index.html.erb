@@ -1,0 +1,25 @@
+<main class="container">
+  <div class="row mt-5">
+    <div class="col-sm-12 col-md-10 mx-auto">
+      <h3 class="mb-4">全授業一覧</h3>
+        <% @lessons.each do |lesson| %>
+          <%= link_to lesson_tasks_path(lesson.id), class: "text-dark text-decoration-none" do %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= lesson.name %></h5>
+                <div class="d-flex justify-content-between">
+                  <div class="class-description">
+                    <p class="card-text mb-1">担当教員：永田教授</p>
+                    <p class="card-text">開講曜日：毎週<%= lesson.weekday %></p>
+                  </div>
+                  <div class="class-button">
+                    <%= link_to "参加中", "#", class: "btn btn-sm btn-success" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</main>
