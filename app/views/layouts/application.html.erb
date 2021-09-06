@@ -13,9 +13,15 @@
   <body style="padding-bottom: 50px;">
     <%= yield %>
     <footer class="fixed-bottom d-flex justify-content-between bg-secondary text-light p-3">
-      <%= link_to "全授業一覧", lessons_path, class:"text-light text-decoration-none" %>
-      <%= link_to "登録授業一覧", "", class:"text-light text-decoration-none" %>
-      <%= link_to "チャット一覧", "", class:"text-light text-decoration-none" %>
+      <% if user_signed_in? %>
+        <%= link_to "全授業一覧", lessons_path, class:"text-light text-decoration-none" %>
+        <%= link_to "登録授業一覧", "", class:"text-light text-decoration-none" %>
+        <%= link_to "チャット一覧", "", class:"text-light text-decoration-none" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-light text-decoration-none" %>
+      <% else %>
+        <%= link_to "新規登録", new_user_registration_path, class:"text-light text-decoration-none" %>
+        <%= link_to "ログイン", new_user_session_path, class:"text-light text-decoration-none" %>
+      <% end %>
     </footer>
     
   </body>
